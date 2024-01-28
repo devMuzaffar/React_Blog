@@ -1,11 +1,19 @@
 import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { auth, db } from "../firebase";
 
 const Home = ({ isAuth }) => {
   const [postList, setPostList] = useState([]);
 
-  const deletePost = async (id) => await deleteDoc(doc(db, "posts", id));
+  // const deletePost = async (id) => await deleteDoc(doc(db, "posts", id));
+
+  const deletePost = useCallback(async (id) => {
+    try {
+      await deleteDoc(doc(db, "posts", id))
+    } catch (error) {
+      console.log('Error Deleting Post:', error);
+    }
+  }, []);
 
   useEffect(() => {
     const getPosts = async () => {

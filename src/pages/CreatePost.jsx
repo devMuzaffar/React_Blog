@@ -22,7 +22,7 @@ const CreatePost = ({ isAuth }) => {
     if (!isAuth) {
       navigate("/login");
     }
-  }, []);
+  });
 
   return (
     <div className="createPostPage">
