@@ -11,7 +11,7 @@ Simple Blog Web application created using React JS &amp; Firebase
 - Firebase
 
 # Live Site:
--
+- https://myblogmk1.netlify.app/
 
 # Screenshots
 ![1](https://github.com/devMuzaffar/React_Blog/assets/4027728/a57d4c53-96fb-4b43-8b6e-a64a10bf79a8)
